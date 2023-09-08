@@ -1,0 +1,1920 @@
+{
+    "name": "Task List App",
+    "components": [
+        {
+            "name": "/Add Todo",
+            "id": "7308dceb-3df9-54ef-90cc-1d304c216cd1",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "507aa26c-acb0-f372-5070-1e380f52849c",
+                        "fromProperty": "onEnter",
+                        "toId": "6d3e2446-35f7-c351-c78d-d41a2666e7be",
+                        "toProperty": "store"
+                    },
+                    {
+                        "fromId": "aa729851-6e68-5825-9c9c-6dc1795dbed7",
+                        "fromProperty": "onClick",
+                        "toId": "6d3e2446-35f7-c351-c78d-d41a2666e7be",
+                        "toProperty": "store"
+                    },
+                    {
+                        "fromId": "6d3e2446-35f7-c351-c78d-d41a2666e7be",
+                        "fromProperty": "created",
+                        "toId": "507aa26c-acb0-f372-5070-1e380f52849c",
+                        "toProperty": "clear"
+                    },
+                    {
+                        "fromId": "6d3e2446-35f7-c351-c78d-d41a2666e7be",
+                        "fromProperty": "created",
+                        "toId": "507aa26c-acb0-f372-5070-1e380f52849c",
+                        "toProperty": "focus"
+                    },
+                    {
+                        "fromId": "507aa26c-acb0-f372-5070-1e380f52849c",
+                        "fromProperty": "onTextChanged",
+                        "toId": "6d3e2446-35f7-c351-c78d-d41a2666e7be",
+                        "toProperty": "prop-task_description"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "715b3a96-8074-03d4-6c94-6c28646cd7d3",
+                        "type": "Group",
+                        "x": 11,
+                        "y": -43.5,
+                        "parameters": {
+                            "sizeMode": "contentHeight",
+                            "paddingTop": {
+                                "value": 20,
+                                "unit": "px"
+                            },
+                            "paddingLeft": {
+                                "value": 20,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 20,
+                                "unit": "px"
+                            },
+                            "paddingBottom": {
+                                "value": 20,
+                                "unit": "px"
+                            },
+                            "position": "sticky",
+                            "backgroundColor": "#FFFFFF",
+                            "borderTopStyle": "solid",
+                            "borderTopWidth": {
+                                "value": 1,
+                                "unit": "px"
+                            },
+                            "borderTopColor": "Light Gray",
+                            "alignY": "bottom"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "507aa26c-acb0-f372-5070-1e380f52849c",
+                                "type": "net.noodl.controls.textinput",
+                                "parameters": {
+                                    "label": "Task Description",
+                                    "type": "textArea",
+                                    "height": {
+                                        "value": 80,
+                                        "unit": "px"
+                                    },
+                                    "useLabel": false,
+                                    "placeholder": "Task description",
+                                    "paddingTop": {
+                                        "value": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "aa729851-6e68-5825-9c9c-6dc1795dbed7",
+                                "type": "net.noodl.controls.button",
+                                "parameters": {
+                                    "label": "Add Task",
+                                    "textTransform": "uppercase",
+                                    "marginTop": {
+                                        "value": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "6d3e2446-35f7-c351-c78d-d41a2666e7be",
+                        "type": "NewDbModelProperties",
+                        "x": 473.09067749622164,
+                        "y": 14.978765353594753,
+                        "parameters": {
+                            "collectionName": "Todo"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "collectionName",
+                                "displayName": "Class",
+                                "group": "General",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "label": "User",
+                                            "value": "_User"
+                                        },
+                                        {
+                                            "label": "Role",
+                                            "value": "_Role"
+                                        },
+                                        {
+                                            "value": "Todo",
+                                            "label": "Todo"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "plug": "input",
+                                "index": 6
+                            },
+                            {
+                                "type": {
+                                    "name": "date"
+                                },
+                                "plug": "input",
+                                "group": "Properties",
+                                "name": "prop-createdAt",
+                                "displayName": "createdAt",
+                                "index": 7
+                            },
+                            {
+                                "type": {
+                                    "name": "date"
+                                },
+                                "plug": "input",
+                                "group": "Properties",
+                                "name": "prop-updatedAt",
+                                "displayName": "updatedAt",
+                                "index": 8
+                            },
+                            {
+                                "type": {
+                                    "name": "string"
+                                },
+                                "plug": "input",
+                                "group": "Properties",
+                                "name": "prop-task_description",
+                                "displayName": "task_description",
+                                "index": 9
+                            },
+                            {
+                                "type": {
+                                    "name": "boolean"
+                                },
+                                "plug": "input",
+                                "group": "Properties",
+                                "name": "prop-completed",
+                                "displayName": "completed",
+                                "index": 10
+                            }
+                        ],
+                        "children": []
+                    }
+                ],
+                "visualRoots": [],
+                "comments": [
+                    {
+                        "text": "The Add Todo component is the input field and button you see at the bottom of the preview window and where you add new tasks.\n\nWhen the user types something in the Input Field it is connected to the task_description field of the Create New Record node for the Todo Class. The Record is created when the user clicks the button or when the enter key is hit in the Input Field.",
+                        "width": 588,
+                        "height": 152,
+                        "fill": true,
+                        "x": -107,
+                        "y": -242,
+                        "color": "comment",
+                        "id": "e6f1ce9c-91fa-9397-3d36-4ab1c4fd6f0b"
+                    }
+                ]
+            },
+            "metadata": {
+                "canvasPos": {
+                    "x": 2029,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "name": "/App",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "9385ea21-4841-1b69-adf6-a4e205488d21",
+                        "fromProperty": "items",
+                        "toId": "7164c8fd-3f3b-7540-975c-a7cf4c5fcfcb",
+                        "toProperty": "items"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "246f9453-a119-ac78-171e-3806cf596ecc",
+                        "type": "Group",
+                        "x": -111.4681915301291,
+                        "y": 311.4376377651178,
+                        "parameters": {
+                            "backgroundColor": "#FFFFFF",
+                            "clip": true,
+                            "scrollEnabled": true
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "58964f92-3431-6bb4-148a-805490e1c439",
+                                "type": "/Header",
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "7cb4ac68-a28d-c255-736c-a04fb00bedf1",
+                                "type": "Group",
+                                "label": "Content",
+                                "parameters": {
+                                    "paddingLeft": {
+                                        "value": 20,
+                                        "unit": "px"
+                                    },
+                                    "paddingTop": {
+                                        "value": 20,
+                                        "unit": "px"
+                                    },
+                                    "paddingRight": {
+                                        "value": 20,
+                                        "unit": "px"
+                                    },
+                                    "clip": false,
+                                    "sizeMode": "explicit"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "7164c8fd-3f3b-7540-975c-a7cf4c5fcfcb",
+                                        "type": "For Each",
+                                        "parameters": {
+                                            "template": "/Todo Item"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [
+                                            {
+                                                "name": "inputMappingScript",
+                                                "type": {
+                                                    "name": "string",
+                                                    "codeeditor": "javascript"
+                                                },
+                                                "displayName": "Script",
+                                                "group": "Input Mapping",
+                                                "default": "// Here you add mappings between the properties of the item objects and the inputs of the components.\n// 'myComponentInput': 'myObjectProperty',\n// 'anotherComponentInput': function () { return object.get('someProperty') + ' ' + object.get('otherProp') }\n// These are the default mappings based on the selected template component.\nmap({\n})\n",
+                                                "plug": "input",
+                                                "index": 6
+                                            }
+                                        ],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "d206e6cf-4bcd-1df8-a11a-66cfce87192f",
+                                "type": "/Add Todo",
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "9385ea21-4841-1b69-adf6-a4e205488d21",
+                        "type": "DbCollection2",
+                        "x": -346.5049846783895,
+                        "y": 448.68915122519223,
+                        "parameters": {
+                            "collectionName": "Todo",
+                            "visualFilter": {
+                                "combinator": "or",
+                                "rules": [
+                                    {
+                                        "combinator": "and",
+                                        "rules": [
+                                            {
+                                                "property": "createdAt",
+                                                "operator": "exist"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "collectionName",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "label": "User",
+                                            "value": "_User"
+                                        },
+                                        {
+                                            "label": "Role",
+                                            "value": "_Role"
+                                        },
+                                        {
+                                            "value": "Todo",
+                                            "label": "Todo"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Class",
+                                "plug": "input",
+                                "group": "General",
+                                "index": 6
+                            },
+                            {
+                                "name": "storageFilterType",
+                                "type": {
+                                    "name": "enum",
+                                    "allowEditOnly": true,
+                                    "enums": [
+                                        {
+                                            "value": "simple",
+                                            "label": "Visual"
+                                        },
+                                        {
+                                            "value": "json",
+                                            "label": "Javascript"
+                                        }
+                                    ]
+                                },
+                                "displayName": "Filter",
+                                "default": "simple",
+                                "plug": "input",
+                                "group": "General",
+                                "index": 7
+                            },
+                            {
+                                "type": "boolean",
+                                "plug": "input",
+                                "group": "Limit",
+                                "name": "storageEnableLimit",
+                                "displayName": "Use limit",
+                                "index": 8
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "input",
+                                "group": "Actions",
+                                "name": "storageFetch",
+                                "displayName": "Do",
+                                "index": 9
+                            },
+                            {
+                                "name": "visualFilter",
+                                "plug": "input",
+                                "type": {
+                                    "name": "query-filter",
+                                    "schema": {
+                                        "properties": {
+                                            "createdAt": {
+                                                "type": "Date"
+                                            },
+                                            "updatedAt": {
+                                                "type": "Date"
+                                            },
+                                            "task_description": {
+                                                "type": "String"
+                                            },
+                                            "completed": {
+                                                "type": "Boolean",
+                                                "defaultValue": false
+                                            }
+                                        }
+                                    },
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Filter",
+                                "group": "Filter",
+                                "index": 10
+                            },
+                            {
+                                "name": "visualSort",
+                                "plug": "input",
+                                "type": {
+                                    "name": "query-sorting",
+                                    "schema": {
+                                        "properties": {
+                                            "createdAt": {
+                                                "type": "Date"
+                                            },
+                                            "updatedAt": {
+                                                "type": "Date"
+                                            },
+                                            "task_description": {
+                                                "type": "String"
+                                            },
+                                            "completed": {
+                                                "type": "Boolean",
+                                                "defaultValue": false
+                                            }
+                                        }
+                                    },
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Sort",
+                                "group": "Sorting",
+                                "index": 11
+                            }
+                        ],
+                        "children": []
+                    }
+                ],
+                "visualRoots": [],
+                "comments": [
+                    {
+                        "text": "This is the App component. \n\nThe Header component contains all the logic to update the number of tasks that are left.\n\nThe Repeater node is what generates tasks based on what the Query Records node gets back from the backend.\n\nThe Add Todo component is the input field and button you see at the bottom of the preview window and where you add new tasks.",
+                        "width": 588,
+                        "height": 203,
+                        "fill": true,
+                        "x": -338,
+                        "y": 77,
+                        "id": "651d1498-c0a2-44d3-67f2-3e70539c9a75",
+                        "color": "comment"
+                    },
+                    {
+                        "text": "Here we are getting all the todos that are in the Todo Class ",
+                        "width": 233,
+                        "height": 185,
+                        "fill": true,
+                        "x": -391,
+                        "y": 382,
+                        "id": "96ce0ab5-2798-240a-2f83-47491ece4e2b",
+                        "color": "data"
+                    }
+                ]
+            },
+            "metadata": {
+                "canvasSize": {
+                    "width": "1039px",
+                    "height": "751px"
+                },
+                "canvasPos": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "name": "/Header",
+            "id": "11f479e3-cf15-112f-84fd-6440afb0e02e",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "68455fb4-7481-2429-2539-4b7e54cbe808",
+                        "fromProperty": "items",
+                        "toId": "6010eae3-eedb-34f6-f0c1-beadbc1075eb",
+                        "toProperty": "items"
+                    },
+                    {
+                        "fromId": "6010eae3-eedb-34f6-f0c1-beadbc1075eb",
+                        "fromProperty": "count",
+                        "toId": "c4650b35-7405-a1de-a248-ce8be4211aa8",
+                        "toProperty": "text"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "62fd78c5-2c8d-4e78-2c1f-23f89504a56a",
+                        "type": "Group",
+                        "x": 35.37882640473413,
+                        "y": -5.090975474848875,
+                        "parameters": {
+                            "flexDirection": "column",
+                            "paddingTop": {
+                                "value": 20,
+                                "unit": "px"
+                            },
+                            "paddingLeft": {
+                                "value": 20,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 20,
+                                "unit": "px"
+                            },
+                            "sizeMode": "contentHeight",
+                            "backgroundColor": "Primary Dark",
+                            "position": "sticky",
+                            "clip": false,
+                            "zIndex": 6,
+                            "paddingBottom": {
+                                "value": 20,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "e4453056-d0ce-91f7-075b-f667438f3114",
+                                "type": "Text",
+                                "label": "Logo",
+                                "parameters": {
+                                    "sizeMode": "contentSize",
+                                    "alignX": "right",
+                                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                                    "text": "My ToDo List",
+                                    "fontSize": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    },
+                                    "color": "#FFFFFF",
+                                    "textTransform": "uppercase",
+                                    "textAlignX": "right"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "c4650b35-7405-a1de-a248-ce8be4211aa8",
+                                "type": "Text",
+                                "label": "Number Tasks Left To Do",
+                                "parameters": {
+                                    "sizeMode": "contentSize",
+                                    "text": "0",
+                                    "fontFamily": "fonts/Roboto/Roboto-Bold.ttf",
+                                    "fontSize": {
+                                        "value": 148,
+                                        "unit": "px"
+                                    },
+                                    "textAlignY": "top",
+                                    "color": "#FFFFFF",
+                                    "lineHeight": {
+                                        "value": 1,
+                                        "unit": ""
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "46c2c0c9-e54c-fdd7-6542-6c73a82c5e7a",
+                                "type": "Text",
+                                "parameters": {
+                                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                                    "fontSize": {
+                                        "value": 20,
+                                        "unit": "px"
+                                    },
+                                    "color": "#FFFFFF",
+                                    "text": "left to do",
+                                    "textTransform": "uppercase",
+                                    "letterSpacing": {
+                                        "value": 0.5,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "68455fb4-7481-2429-2539-4b7e54cbe808",
+                        "type": "DbCollection2",
+                        "x": -397.6211735952659,
+                        "y": 118.10841425032262,
+                        "parameters": {
+                            "collectionName": "Todo",
+                            "visualFilter": {
+                                "combinator": "or",
+                                "rules": [
+                                    {
+                                        "combinator": "and",
+                                        "rules": [
+                                            {
+                                                "property": "createdAt",
+                                                "operator": "exist"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "collectionName",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "label": "User",
+                                            "value": "_User"
+                                        },
+                                        {
+                                            "label": "Role",
+                                            "value": "_Role"
+                                        },
+                                        {
+                                            "value": "Todo",
+                                            "label": "Todo"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Class",
+                                "plug": "input",
+                                "group": "General",
+                                "index": 6
+                            },
+                            {
+                                "name": "storageFilterType",
+                                "type": {
+                                    "name": "enum",
+                                    "allowEditOnly": true,
+                                    "enums": [
+                                        {
+                                            "value": "simple",
+                                            "label": "Visual"
+                                        },
+                                        {
+                                            "value": "json",
+                                            "label": "Javascript"
+                                        }
+                                    ]
+                                },
+                                "displayName": "Filter",
+                                "default": "simple",
+                                "plug": "input",
+                                "group": "General",
+                                "index": 7
+                            },
+                            {
+                                "type": "boolean",
+                                "plug": "input",
+                                "group": "Limit",
+                                "name": "storageEnableLimit",
+                                "displayName": "Use limit",
+                                "index": 8
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "input",
+                                "group": "Actions",
+                                "name": "storageFetch",
+                                "displayName": "Do",
+                                "index": 9
+                            },
+                            {
+                                "name": "visualFilter",
+                                "plug": "input",
+                                "type": {
+                                    "name": "query-filter",
+                                    "schema": {
+                                        "properties": {
+                                            "createdAt": {
+                                                "type": "Date"
+                                            },
+                                            "updatedAt": {
+                                                "type": "Date"
+                                            },
+                                            "task_description": {
+                                                "type": "String"
+                                            },
+                                            "completed": {
+                                                "type": "Boolean",
+                                                "defaultValue": false
+                                            }
+                                        }
+                                    },
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Filter",
+                                "group": "Filter",
+                                "index": 10
+                            },
+                            {
+                                "name": "visualSort",
+                                "plug": "input",
+                                "type": {
+                                    "name": "query-sorting",
+                                    "schema": {
+                                        "properties": {
+                                            "createdAt": {
+                                                "type": "Date"
+                                            },
+                                            "updatedAt": {
+                                                "type": "Date"
+                                            },
+                                            "task_description": {
+                                                "type": "String"
+                                            },
+                                            "completed": {
+                                                "type": "Boolean",
+                                                "defaultValue": false
+                                            }
+                                        }
+                                    },
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Sort",
+                                "group": "Sorting",
+                                "index": 11
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "6010eae3-eedb-34f6-f0c1-beadbc1075eb",
+                        "type": "FilterDBModels",
+                        "x": -167.62117359526587,
+                        "y": 131.10841425032262,
+                        "parameters": {
+                            "collectionName": "Todo",
+                            "visualFilter": {
+                                "combinator": "or",
+                                "rules": [
+                                    {
+                                        "combinator": "and",
+                                        "rules": [
+                                            {
+                                                "property": "completed",
+                                                "value": false,
+                                                "operator": "equal to"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "collectionName",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "value": "Todo",
+                                            "label": "Todo"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Class",
+                                "plug": "input",
+                                "group": "General",
+                                "index": 7
+                            },
+                            {
+                                "type": "boolean",
+                                "plug": "input",
+                                "group": "Limit",
+                                "name": "filterEnableLimit",
+                                "displayName": "Use limit",
+                                "index": 8
+                            },
+                            {
+                                "name": "visualFilter",
+                                "plug": "input",
+                                "type": {
+                                    "name": "query-filter",
+                                    "schema": {
+                                        "properties": {
+                                            "createdAt": {
+                                                "type": "Date"
+                                            },
+                                            "updatedAt": {
+                                                "type": "Date"
+                                            },
+                                            "task_description": {
+                                                "type": "String"
+                                            },
+                                            "completed": {
+                                                "type": "Boolean",
+                                                "defaultValue": false
+                                            }
+                                        }
+                                    },
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Filter",
+                                "group": "Filter",
+                                "index": 9
+                            },
+                            {
+                                "name": "visualSorting",
+                                "plug": "input",
+                                "type": {
+                                    "name": "query-sorting",
+                                    "schema": {
+                                        "properties": {
+                                            "createdAt": {
+                                                "type": "Date"
+                                            },
+                                            "updatedAt": {
+                                                "type": "Date"
+                                            },
+                                            "task_description": {
+                                                "type": "String"
+                                            },
+                                            "completed": {
+                                                "type": "Boolean",
+                                                "defaultValue": false
+                                            }
+                                        }
+                                    },
+                                    "allowEditOnly": true
+                                },
+                                "displayName": "Sorting",
+                                "group": "Sorting",
+                                "index": 10
+                            }
+                        ],
+                        "children": []
+                    }
+                ],
+                "visualRoots": [],
+                "comments": [
+                    {
+                        "text": "This is the Header component that displays the logo and how many tasks that are left to do",
+                        "width": 305,
+                        "height": 100,
+                        "fill": true,
+                        "x": -46,
+                        "y": -130,
+                        "id": "a4940042-9f7f-8fb0-8ad7-b42f99018d8c",
+                        "color": "comment"
+                    },
+                    {
+                        "text": "This Filter Records filters out all the completed tasks so that we only display how many tasks that are left to do. Click this node to see how the filter is set up",
+                        "width": 211,
+                        "height": 255,
+                        "fill": true,
+                        "x": -201,
+                        "y": -8,
+                        "id": "dece71e3-f67d-3a53-06c1-79bd45aadaa8",
+                        "color": "data"
+                    }
+                ]
+            },
+            "metadata": {
+                "canvasPos": {
+                    "x": 1119,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "name": "/Todo Item",
+            "id": "3bb80ee9-565b-5760-83dc-494ea7a7fa46",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "f8e04883-0e62-473d-bf1f-b958b7a3e7ce",
+                        "fromProperty": "prop-completed",
+                        "toId": "f83cc596-4de3-d2dd-d1c4-72751b851cc7",
+                        "toProperty": "checked"
+                    },
+                    {
+                        "fromId": "f8e04883-0e62-473d-bf1f-b958b7a3e7ce",
+                        "fromProperty": "prop-task_description",
+                        "toId": "f83cc596-4de3-d2dd-d1c4-72751b851cc7",
+                        "toProperty": "label"
+                    },
+                    {
+                        "fromId": "f83cc596-4de3-d2dd-d1c4-72751b851cc7",
+                        "fromProperty": "onChange",
+                        "toId": "3a591cf0-e57d-2d87-c01b-716202f3b28d",
+                        "toProperty": "store"
+                    },
+                    {
+                        "fromId": "f83cc596-4de3-d2dd-d1c4-72751b851cc7",
+                        "fromProperty": "checked",
+                        "toId": "3a591cf0-e57d-2d87-c01b-716202f3b28d",
+                        "toProperty": "prop-completed"
+                    },
+                    {
+                        "fromId": "d1f4be8b-6b67-ca01-607c-933663860108",
+                        "fromProperty": "onClick",
+                        "toId": "b1a66e3e-fab5-b414-1eab-a9a52fa390ca",
+                        "toProperty": "store"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "56e52c92-123e-b5a0-a72e-4478b85f2e57",
+                        "type": "Group",
+                        "label": "Group",
+                        "x": -124,
+                        "y": -37.5,
+                        "parameters": {
+                            "sizeMode": "contentHeight",
+                            "flexDirection": "row",
+                            "marginBottom": {
+                                "value": 4,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "f83cc596-4de3-d2dd-d1c4-72751b851cc7",
+                                "type": "net.noodl.controls.checkbox",
+                                "parameters": {
+                                    "alignY": "center",
+                                    "label": "This is a todo item"
+                                },
+                                "stateParameters": {
+                                    "checked": {
+                                        "labelcolor": "#1F1F1F7F"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "d1f4be8b-6b67-ca01-607c-933663860108",
+                                "type": "net.noodl.controls.button",
+                                "parameters": {
+                                    "alignX": "right",
+                                    "alignY": "center",
+                                    "useLabel": false,
+                                    "useIcon": true,
+                                    "iconSourceType": "icon",
+                                    "iconIconSource": {
+                                        "class": "material-icons",
+                                        "code": "delete"
+                                    },
+                                    "iconColor": "Light Gray",
+                                    "backgroundColor": "transparent",
+                                    "paddingLeft": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    },
+                                    "paddingRight": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "stateParameters": {
+                                    "hover": {
+                                        "iconColor": "Dark",
+                                        "backgroundColor": "Light Gray"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "f8e04883-0e62-473d-bf1f-b958b7a3e7ce",
+                        "type": "DbModel2",
+                        "x": -418.3253440749476,
+                        "y": -7.250154988714996,
+                        "parameters": {
+                            "idSource": "foreach",
+                            "collectionName": "Todo"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "collectionName",
+                                "displayName": "Class",
+                                "group": "General",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "label": "User",
+                                            "value": "_User"
+                                        },
+                                        {
+                                            "label": "Role",
+                                            "value": "_Role"
+                                        },
+                                        {
+                                            "value": "Todo",
+                                            "label": "Todo"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "plug": "input",
+                                "index": 8
+                            },
+                            {
+                                "type": {
+                                    "name": "date"
+                                },
+                                "plug": "output",
+                                "group": "Properties",
+                                "name": "prop-createdAt",
+                                "displayName": "createdAt",
+                                "index": 9
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "createdAt Changed",
+                                "name": "changed-createdAt",
+                                "index": 10
+                            },
+                            {
+                                "type": {
+                                    "name": "date"
+                                },
+                                "plug": "output",
+                                "group": "Properties",
+                                "name": "prop-updatedAt",
+                                "displayName": "updatedAt",
+                                "index": 11
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "updatedAt Changed",
+                                "name": "changed-updatedAt",
+                                "index": 12
+                            },
+                            {
+                                "type": {
+                                    "name": "string"
+                                },
+                                "plug": "output",
+                                "group": "Properties",
+                                "name": "prop-task_description",
+                                "displayName": "task_description",
+                                "index": 13
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "task_description Changed",
+                                "name": "changed-task_description",
+                                "index": 14
+                            },
+                            {
+                                "type": {
+                                    "name": "boolean"
+                                },
+                                "plug": "output",
+                                "group": "Properties",
+                                "name": "prop-completed",
+                                "displayName": "completed",
+                                "index": 15
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "completed Changed",
+                                "name": "changed-completed",
+                                "index": 16
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "3a591cf0-e57d-2d87-c01b-716202f3b28d",
+                        "type": "SetDbModelProperties",
+                        "x": 205.82604358678208,
+                        "y": -47.849834222511134,
+                        "parameters": {
+                            "idSource": "foreach",
+                            "collectionName": "Todo"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "collectionName",
+                                "displayName": "Class",
+                                "group": "General",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "label": "User",
+                                            "value": "_User"
+                                        },
+                                        {
+                                            "label": "Role",
+                                            "value": "_Role"
+                                        },
+                                        {
+                                            "value": "Todo",
+                                            "label": "Todo"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "plug": "input",
+                                "index": 9
+                            },
+                            {
+                                "type": {
+                                    "name": "date"
+                                },
+                                "plug": "input",
+                                "group": "Properties",
+                                "name": "prop-createdAt",
+                                "displayName": "createdAt",
+                                "index": 10
+                            },
+                            {
+                                "type": {
+                                    "name": "date"
+                                },
+                                "plug": "input",
+                                "group": "Properties",
+                                "name": "prop-updatedAt",
+                                "displayName": "updatedAt",
+                                "index": 11
+                            },
+                            {
+                                "type": {
+                                    "name": "string"
+                                },
+                                "plug": "input",
+                                "group": "Properties",
+                                "name": "prop-task_description",
+                                "displayName": "task_description",
+                                "index": 12
+                            },
+                            {
+                                "type": {
+                                    "name": "boolean"
+                                },
+                                "plug": "input",
+                                "group": "Properties",
+                                "name": "prop-completed",
+                                "displayName": "completed",
+                                "index": 13
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "b1a66e3e-fab5-b414-1eab-a9a52fa390ca",
+                        "type": "DeleteDbModelProperties",
+                        "x": 204.5760657374962,
+                        "y": 190.42353488680476,
+                        "parameters": {
+                            "idSource": "foreach",
+                            "collectionName": "Todo"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "collectionName",
+                                "displayName": "Class",
+                                "group": "General",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "label": "User",
+                                            "value": "_User"
+                                        },
+                                        {
+                                            "label": "Role",
+                                            "value": "_Role"
+                                        },
+                                        {
+                                            "value": "Todo",
+                                            "label": "Todo"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "plug": "input",
+                                "index": 7
+                            }
+                        ],
+                        "children": []
+                    }
+                ],
+                "visualRoots": [],
+                "comments": [
+                    {
+                        "text": "Each Todo Item is generated by a Repeater node. We get the data for each item from the Record node that looks at the Todo class in the backend, and this Record node gets it's Id from the Repeater that generates it.",
+                        "width": 481,
+                        "height": 100,
+                        "fill": true,
+                        "x": -269,
+                        "y": -261,
+                        "id": "184f7c2f-1e2b-aa2f-de79-f524250b2ea1",
+                        "color": "comment"
+                    },
+                    {
+                        "text": "The record node contains the data of a specific row in the backend. Which row is determined by the Record nodes id, and in this app the Repeater node is supplying the Id",
+                        "width": 247,
+                        "height": 280,
+                        "fill": true,
+                        "x": -458,
+                        "y": -134,
+                        "id": "7a6e231e-13d4-8495-3899-107c3b7b3a3b",
+                        "color": "data"
+                    },
+                    {
+                        "text": "Here we update the completed property of this task.",
+                        "width": 224,
+                        "height": 234,
+                        "fill": true,
+                        "x": 168,
+                        "y": -136,
+                        "id": "a5b18756-5b9f-3007-bec9-04935e8419ff",
+                        "color": "data"
+                    },
+                    {
+                        "text": "If the user clicks the delete button we delete the Record from the backend",
+                        "width": 224,
+                        "height": 234,
+                        "fill": true,
+                        "x": 179,
+                        "y": 110,
+                        "color": "data",
+                        "id": "5095bda3-1c9b-431b-362a-0d584c0cd5fd"
+                    }
+                ]
+            },
+            "metadata": {
+                "canvasPos": {
+                    "x": 1574,
+                    "y": 0
+                }
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "246f9453-a119-ac78-171e-3806cf596ecc",
+    "version": "4",
+    "metadata": {
+        "dbCollections": [
+            {
+                "name": "Todo",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "task_description": {
+                            "type": "String"
+                        },
+                        "completed": {
+                            "type": "Boolean",
+                            "defaultValue": false
+                        }
+                    }
+                }
+            }
+        ],
+        "styles": {
+            "colors": {
+                "Primary": "#5836F5",
+                "Light Gray": "#C6C6C6",
+                "Dark Gray": "#434B53",
+                "Primary Dark": "#3F22B8",
+                "Dark": "#1F1F1F",
+                "Primary Light": "#C9BFFC"
+            },
+            "text": {
+                "Body Text": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "18",
+                        "unit": "px"
+                    },
+                    "lineHeight": {
+                        "value": "",
+                        "unit": ""
+                    }
+                },
+                "Button Label": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "16",
+                        "unit": "px"
+                    },
+                    "lineHeight": {
+                        "value": "",
+                        "unit": "px"
+                    }
+                },
+                "Label Text": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "14",
+                        "unit": "px"
+                    },
+                    "lineHeight": {
+                        "value": "",
+                        "unit": "px"
+                    },
+                    "letterSpacing": {
+                        "value": "",
+                        "unit": "px"
+                    }
+                }
+            }
+        },
+        "cloudservices": {
+            "instanceId": "958a4e995091ce07",
+            "workspaceId": "7ad6fd",
+            "endpoint": "https://backend.noodl.cloud/7ad6fd/958a4e995091ce07",
+            "appId": "958a4e995091ce07"
+        },
+        "systemCollections": [
+            {
+                "name": "_User",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "username": {
+                            "type": "String"
+                        },
+                        "password": {
+                            "type": "String"
+                        },
+                        "email": {
+                            "type": "String"
+                        },
+                        "emailVerified": {
+                            "type": "Boolean"
+                        },
+                        "authData": {
+                            "type": "Object"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "_Role",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "name": {
+                            "type": "String"
+                        },
+                        "users": {
+                            "type": "Relation",
+                            "targetClass": "_User"
+                        },
+                        "roles": {
+                            "type": "Relation",
+                            "targetClass": "_Role"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "variants": [
+        {
+            "typename": "net.noodl.controls.button",
+            "parameters": {
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "sizeMode": "contentWidth",
+                "backgroundColor": "Primary",
+                "iconIconSource": {
+                    "class": "material-icons",
+                    "code": "home"
+                },
+                "iconSize": {
+                    "value": 22,
+                    "unit": "px"
+                },
+                "iconSpacing": {
+                    "value": 6,
+                    "unit": "px"
+                },
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "textStyle": "Button Label",
+                "paddingTop": {
+                    "value": 5,
+                    "unit": "px"
+                },
+                "paddingLeft": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "paddingBottom": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "color": "#FFFFFF",
+                "fontFamily": "fonts/Roboto/Roboto-Medium.ttf"
+            },
+            "stateParamaters": {
+                "hover": {
+                    "backgroundColor": "Primary Dark"
+                },
+                "pressed": {
+                    "backgroundColor": "Primary Light",
+                    "color": "Primary Dark"
+                },
+                "disabled": {
+                    "backgroundColor": "Light Gray"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "pressed": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.radiobutton",
+            "parameters": {
+                "width": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "height": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "useLabel": true,
+                "labeltextStyle": "Label Text",
+                "borderWidth": {
+                    "value": 2,
+                    "unit": "px"
+                },
+                "value": "0",
+                "useIcon": true,
+                "borderColor": "#1F1F1F7F",
+                "labelfontSize": {
+                    "value": 16,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "checked": {
+                    "iconIconSource": {
+                        "class": "material-icons",
+                        "code": "circle"
+                    },
+                    "iconColor": "Primary",
+                    "iconSize": {
+                        "value": 21,
+                        "unit": "px"
+                    },
+                    "borderColor": "Primary",
+                    "borderWidth": {
+                        "value": 2,
+                        "unit": "px"
+                    },
+                    "backgroundColor": "#FFFFFF",
+                    "width": {
+                        "value": 24,
+                        "unit": "px"
+                    },
+                    "height": {
+                        "value": 24,
+                        "unit": "px"
+                    },
+                    "useIcon": true
+                },
+                "hover": {
+                    "backgroundColor": "transparent",
+                    "borderColor": "Primary",
+                    "width": {
+                        "value": 24,
+                        "unit": "px"
+                    },
+                    "height": {
+                        "value": 24,
+                        "unit": "px"
+                    }
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "checked": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.range",
+            "parameters": {
+                "thumbColor": "Primary",
+                "thumbBorderRadius": {
+                    "value": 100,
+                    "unit": "%"
+                },
+                "trackHeight": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "trackActiveColor": "Primary",
+                "trackColor": "Primary Light",
+                "width": {
+                    "value": 100,
+                    "unit": "%"
+                }
+            },
+            "stateParamaters": {},
+            "stateTransitions": {}
+        },
+        {
+            "typename": "net.noodl.controls.checkbox",
+            "parameters": {
+                "width": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "height": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "useIcon": false,
+                "borderWidth": {
+                    "value": 2,
+                    "unit": "px"
+                },
+                "useLabel": true,
+                "labeltextStyle": "Label Text",
+                "borderRadius": {
+                    "value": 2,
+                    "unit": "px"
+                },
+                "borderColor": "#0000007F",
+                "labelfontSize": {
+                    "value": 16,
+                    "unit": "px"
+                },
+                "labelcolor": "Dark"
+            },
+            "stateParamaters": {
+                "checked": {
+                    "useIcon": true,
+                    "iconIconSource": {
+                        "class": "material-icons",
+                        "code": "check"
+                    },
+                    "backgroundColor": "Primary",
+                    "borderColor": "Primary",
+                    "iconSize": {
+                        "value": 16,
+                        "unit": "px"
+                    }
+                },
+                "disabled": {
+                    "opacity": 0.5
+                },
+                "hover": {
+                    "borderColor": "Primary"
+                },
+                "pressed": {}
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "checked": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.textinput",
+            "parameters": {
+                "useLabel": true,
+                "sizeMode": "explicit",
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "textStyle": "Body Text",
+                "borderStyle": "solid",
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "borderWidth": {
+                    "value": 2,
+                    "unit": "px"
+                },
+                "borderColor": "#1F1F1F7F",
+                "labeltextStyle": "Label Text",
+                "paddingLeft": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "labelSpacing": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "placeholder": "Type here",
+                "labelcolor": "#1F1F1F7F",
+                "labeltextTransform": "uppercase",
+                "labelfontSize": {
+                    "value": 12,
+                    "unit": "px"
+                },
+                "labelfontFamily": "fonts/Roboto/Roboto-Medium.ttf"
+            },
+            "stateParamaters": {
+                "hover": {
+                    "labelcolor": "#000000",
+                    "borderColor": "Dark",
+                    "borderStyle": "solid"
+                },
+                "focused": {
+                    "borderColor": "Primary",
+                    "labelcolor": "Primary",
+                    "borderWidth": {
+                        "value": 2,
+                        "unit": "px"
+                    },
+                    "boxShadowEnabled": false,
+                    "boxShadowColor": "Primary",
+                    "borderStyle": "solid"
+                },
+                "disabled": {
+                    "labelcolor": "Light Gray",
+                    "backgroundColor": "Light Gray",
+                    "borderWidth": {
+                        "value": 1,
+                        "unit": "px"
+                    },
+                    "borderColor": "Light Gray"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "focused": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.options",
+            "parameters": {
+                "sizeMode": "explicit",
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "borderWidth": {
+                    "value": 2,
+                    "unit": "px"
+                },
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "borderColor": "#1F1F1F7F",
+                "boxShadowColor": "Dark Gray",
+                "useIcon": true,
+                "iconIconSource": {
+                    "class": "material-icons",
+                    "code": "expand_more"
+                },
+                "iconPlacement": "right",
+                "iconSize": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "textStyle": "Body Text",
+                "paddingLeft": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "marginTop": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "width": {
+                    "value": 75,
+                    "unit": "%"
+                },
+                "iconColor": "#1F1F1F7F"
+            },
+            "stateParamaters": {
+                "hover": {
+                    "borderColor": "Dark",
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    },
+                    "iconColor": "Dark",
+                    "iconSize": {
+                        "value": 24,
+                        "unit": "px"
+                    },
+                    "iconPlacement": "right"
+                },
+                "focused": {
+                    "borderColor": "Primary",
+                    "boxShadowColor": "Primary",
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    },
+                    "useIcon": true,
+                    "iconColor": "Primary",
+                    "iconIconSource": {
+                        "class": "material-icons",
+                        "code": "keyboard_arrow_up"
+                    },
+                    "iconSize": {
+                        "value": 24,
+                        "unit": "px"
+                    },
+                    "iconPlacement": "right"
+                },
+                "pressed": {
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    }
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "focused": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                }
+            }
+        }
+    ]
+}
